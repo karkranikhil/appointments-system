@@ -2,12 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import { Appointment } from '../src/Appointment';
 describe('Appointment', () => {
-        it('renders the customer first name', () => {
-            const customer = { firstName: 'Ashley' };
-            const component = <Appointment customer={customer} />;
-            const container = document.createElement('div');
-            document.body.appendChild(container);
-            ReactDOM.render(component, container);
-            expect(document.body.textContent).toMatch('Ashley');
-          });
+  let container
+  let render
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        render = component => ReactDOM.render(component, container);
+      });
+    it('renders the first customer first name', () => {
+        const customer = { firstName: 'Ashley' };
+        
+        render(<Appointment customer={customer} />)
+        expect(container.textContent).toMatch('Ashley');
+    });
+    it('renders the second  customer last name', () => {
+        const customer = { firstName: 'Nikhil' };
+        render(<Appointment customer={customer} />)
+        expect(container.textContent).toMatch('Nikhil');
+    });
   });
