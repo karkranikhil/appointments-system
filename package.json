@@ -1,0 +1,19 @@
+{
+  "name": "appointments",
+  "version": "1.0.0",
+  "description": "Appointment systems",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "TDD",
+    "React",
+    "Jest"
+  ],
+  "author": "Nikhil karkra",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
